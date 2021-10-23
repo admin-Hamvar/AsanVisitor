@@ -8,11 +8,11 @@ const Product= (p) => {
 
 <>
                
-  <td class="item2"><p>{p.product.code}</p></td>
-  <td class="item3"><p> {p.product.serial}</p></td>  
-  <td class="item4"><p> {p.product.price}</p></td>
-  <td class="item5"><p>{p.product.unit}</p></td>
-  <td class="item6"> <p> {p.product.name} </p></td>  
+  {/* <td className="item2"><p>{p.product.code}</p></td>
+  <td className="item3"><p> {p.product.serial}</p></td>  
+  <td className="item4"><p> {p.product.price}</p></td>
+  <td className="item5"><p>{p.product.unit}</p></td> */}
+  <td className="item6"> <p> {p.product.ProductName} </p></td>  
 </>
        
      );
