@@ -1,0 +1,1 @@
+export const _URL='http://172.25.4.110:8060/api';

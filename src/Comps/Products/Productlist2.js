@@ -1,15 +1,28 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../App";
 import Product from "./Product";
 import '../btn.css';
 import "./product.css";
+import axios from "axios";
 
 
 
  const  ProductList2 = () => {
-    const [products,dispatch]= useContext(ProductContext);
+    const [products,setProducts]= useState([]);
+    console.log('products list:',products);
 
-    console.log('products list:',products,dispatch);
+const GetProducts=()=>{
+   axios.get('http://172.25.4.110:8060/api/products/allproducts2?storeid=0')
+.then((p)=>{
+     setProducts([... p.data]);
+});}
+
+    useEffect(()=>{
+       GetProducts();
+
+    },[])
+
+
   //  console.log('pc:S',products.length);
     return ( 
  
@@ -21,7 +34,7 @@ import "./product.css";
      <button class="btn" >
      <p>عنوان 1</p>
       </button>
-      <button className="btn" onClick={()=>dispatch({type:'GetAll'})} >
+      <button className="btn" onClick={GetProducts} >
      <p>دریافت کالاها</p>
       </button>
      <button className="btn" >
@@ -44,7 +57,7 @@ import "./product.css";
        </thead>
        <tbody>
        {
-       Array.isArray(products)??
+      
         products.map((p,index)=> 
       <tr  key={index}> 
           <Product product={p} /> 
