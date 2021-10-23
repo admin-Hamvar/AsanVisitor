@@ -1,20 +1,20 @@
 import DetailProduct from "./DetailProduct";
+import "./product.css";
 
 const Product= (p) => {
-    //console.log(p);
+    console.log(p);
+    
     return ( 
-        <>
-        <dt> {p.product.name} </dt>
-         <dd>  
-         <p>Price: {p.product.price}</p>
-              <p>ID: {p.product.id}</p>
-            
-            <p>Code: {p.product.code}</p>
-            <p>Serial: {p.product.serial}</p>
-            <p>unit: {p.product.unit}</p>
-            
-             </dd>
-        </>
+
+<>
+               
+  <td class="item2"><p>{p.product.code}</p></td>
+  <td class="item3"><p> {p.product.serial}</p></td>  
+  <td class="item4"><p> {p.product.price}</p></td>
+  <td class="item5"><p>{p.product.unit}</p></td>
+  <td class="item6"> <p> {p.product.name} </p></td>  
+</>
+       
      );
 }
  
