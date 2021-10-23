@@ -3,6 +3,7 @@ import './App.css';
 import React,{createContext, useReducer} from 'react';
 import ProductList from './Comps/Products/ProductList';
 import { ProductReducer, products } from './Comps/Products/ProductService';
+import ProductList2 from './Comps/Products/Productlist2';
 
 
 export const ProductContext=createContext();
@@ -12,8 +13,8 @@ function App() {
    
 <ProductContext.Provider value={ProductReducer1} >
    <div className="App">
-    
-  <ProductList />
+   {/* <ProductList /> */}
+  <ProductList2 />
   <p>all right reserved </p>
 
     </div>
